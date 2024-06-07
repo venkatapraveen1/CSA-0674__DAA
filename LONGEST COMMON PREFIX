@@ -1,0 +1,21 @@
+def longest_common_prefix(strs):
+    if not strs:
+        return ""
+
+    # Sort the list of strings
+    strs.sort()
+
+    # Find the common prefix between the first and last strings
+    prefix = ""
+    for i in range(len(strs[0])):
+        if strs[0][i] == strs[-1][i]:
+            prefix += strs[0][i]
+        else:
+            break
+
+    return prefix
+
+# Test the function
+strs = ["flower", "flow", "flight"]
+output = longest_common_prefix(strs)
+print(output)  # Output: "fl"
